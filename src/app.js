@@ -1,13 +1,14 @@
+require('dotenv').config()
 const express = require('express')
 const app = express()
-const port = 3000
+const port = process.env.PORT || 3000
 const apiRouter = require('./routes/api.routes')
 
 app.use(express.json());
 
 app.use('/api', apiRouter)
 
-app.use((err, req, res, next) => {
+app.use((err, req, res) => {
     console.error(err.stack)
     res.status(500).json({ error: 'Algo salió mal en el servidor' })
   })

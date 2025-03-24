@@ -16,7 +16,7 @@ router.use((req, res, next) => {
 router
     .get('/tasks', getTasks)
     .post('/tasks', validateTaskForm(), createTask)
-    .put('/tasks/:id', updateTask)
+    .put('/tasks/:id', validateTaskForm(), updateTask)
     .delete('/tasks/:id', deleteTask)
 
 module.exports = router;

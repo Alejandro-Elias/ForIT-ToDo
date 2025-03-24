@@ -25,9 +25,6 @@ const validateTaskForm = () => [
     .withMessage('El campo descripción es obligatorio')
     .isString()
     .withMessage('El campo descripción debe ser texto'),
-  body('completed')
-    .isBoolean()
-    .withMessage('debes elegir si esta competada o no'),
   handleValidationErrors,
 ];
 

@@ -81,7 +81,7 @@ const createTask = (req, res) => {
 
 const updateTask = (req, res) => {
   const { title, description, completed } = req.body;
-  const id = parseInt(req.params.id, 10);
+  const id = parseInt(req.params.id);
 
   
     try {
@@ -97,11 +97,13 @@ const updateTask = (req, res) => {
         });
       }
 
+      console.log(tareas)
+
       tareas.task[taskIndex] = {
               id: tareas.task[taskIndex].id,
               title: title ? title : tareas.task[taskIndex].title,
               description: description ? description : tareas.task[taskIndex].description,
-              completed: completed !== tareas.task[taskIndex].completed ? completed :  tareas.task[taskIndex].completed,
+              completed: typeof completed !== "undefined" ? completed : tareas.task[taskIndex].completed,
               createdAt: tareas.task[taskIndex].createdAt,
             }
 

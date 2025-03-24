@@ -1,12 +1,23 @@
 require('dotenv').config()
 const express = require('express')
 const app = express()
-const port = process.env.PORT || 3000
+const port = process.env.PORT || 3001
 const apiRouter = require('./routes/api.routes')
+const cors = require('cors')
+
+const corsoptions = {
+  origin: 'http://localhost:3000',
+  methods: ['GET', 'POST', 'PUT', 'DELETE'],
+  credentials: true,
+  allowedHeaders: ['Content-Type', 'Authorization'],
+}
+
+app.use(cors(corsoptions))
 
 app.use(express.json());
 
 app.use('/api', apiRouter)
+
 
 app.use((err, req, res) => {
     console.error(err.stack)

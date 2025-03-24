@@ -5,8 +5,9 @@ const validateTaskForm = require('../validation/validateTaskForm');
 
 router.use((req, res, next) => {
     const apiKey = req.headers.authorization;
+    
         
-    if (!apiKey || apiKey !== process.env.API_KEY) {
+    if (!apiKey || apiKey !== "Bearer " + process.env.API_KEY) {
         return res.status(401).json({ error: 'Api key invalida' });
     }
     next()

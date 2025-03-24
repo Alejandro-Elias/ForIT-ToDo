@@ -2,9 +2,8 @@
   "task": [
     {
       "id": 1,
-      "title": "Tarea 1",
-      "description": "Descripcion de la tarea 1",
-      "completed": true,
+      "title": "tarea 1",
+      "description": "descripcion de la tarea 1",
       "createdAt": "2021-09-01T00:00:00.000Z"
     },
     {
@@ -19,13 +18,6 @@
       "title": "Tarea 3",
       "description": "Descripcion de la tarea 3",
       "completed": false,
-      "createdAt": "2021-09-01T00:00:00.000Z"
-    },
-    {
-      "id": 4,
-      "title": "Tarea 23",
-      "description": "Descripcion de la tarea 22",
-      "completed": 0,
       "createdAt": "2021-09-01T00:00:00.000Z"
     }
   ]
